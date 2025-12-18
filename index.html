@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سحب أرباح WIN DREAMS</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <main id="content-area">
+        
+        <section id="step-1-welcome">
+            <img src="https://via.placeholder.com/400x150/57008a/ffffff?text=WIN+DREAMS+BIG+WINNER" alt="بانر WIN DREAMS" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+            
+            <h1 style="font-size: 28px; margin-bottom: 5px;">WIN DREAMS</h1> 
+            <p style="font-size: 1.1em; color: #ff9900; font-weight: bold; margin-bottom: 25px;">
+                أيام قليلة فقط متبقية على ربح 1,000,000$!
+            </p>
+            
+            <h2>ما هو حلمك؟</h2>
+            
+            <div id="dream-options-grid">
+                <button class="dream-btn" data-dream="Cash">
+                    <span class="icon">💸</span> أموال نقدية
+                </button>
+                
+                <button class="dream-btn" data-dream="Car">
+                    <span class="icon">🚗</span> سيارة
+                </button>
+                
+                <button class="dream-btn" data-dream="House">
+                    <span class="icon">🏠</span> منزل
+                </button>
+                
+                <button class="dream-btn" data-dream="Hajj">
+                    <span class="icon">🕋</span> الحج
+                </button>
+                
+                <button class="dream-btn" data-dream="Education">
+                    <span class="icon">📚</span> التعليم
+                </button>
+                
+                <button class="dream-btn" data-dream="Business">
+                    <span class="icon">💼</span> مشروع تجاري
+                </button>
+                
+                <button class="dream-btn" data-dream="Marriage">
+                    <span class="icon">💍</span> الزواج
+                </button>
+                
+                <button class="dream-btn" data-dream="Other">
+                    <span class="icon">⭐</span> حلم آخر
+                </button>
+            </div>
+            
+        </section>
+
+        <section id="step-2-form" style="display: none;"> 
+            <h2 style="color: #ffcc00; font-size: 24px;">كن مليونيرنا القادم!</h2>
+            <p>يرجى إدخال بياناتك للمتابعة إلى السحب:</p>
+            <form id="details-form">
+                
+                <div class="input-group">
+                    <input type="text" id="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="location" required placeholder="أدخل موقعك / مدينتك">
+                </div>
+                
+                <div class="input-group">
+                    <input type="email" id="email" required placeholder="أدخل بريدك الإلكتروني (Gmail)">
+                </div>
+                
+                <button type="submit" id="submit-details-btn">الانتقال إلى السحب</button>
+            </form>
+        </section>
+
+        <section id="step-3-spin" style="display: none;">
+            <h2>حظاً موفقاً! قم بتدوير العجلة</h2>
+            <div id="wheel-container">
+                <p>اضغط أدناه لمعرفة ما ربحت!</p>
+                <button id="spin-btn">دوّر الآن!</button>
+            </div>
+            <p id="result-message" style="margin-top: 20px; font-weight: bold; font-size: 1.1em; color: #ffcc00;"></p>
+        </section>
+
+        <section id="step-4-reward" style="display: none;">
+            <h2 id="reward-title" style="color: #25D366; font-size: 28px;">تهانينا!</h2>
+            <p id="prize-won" style="font-size: 1.3em; font-weight: bold; margin-bottom: 20px;"></p>
+            
+            <p style="margin-top: 30px;">
+                لاستلام جائزتك، يرجى التواصل مباشرة مع فريق الدعم عبر واتساب.
+            </p>
+            
+            <a href="#" id="whatsapp-link" target="_blank" style="text-decoration: none;">
+                 <button style="background-color: #25D366; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);">
+                    <span style="margin-right: 10px;">📲</span> استلم جائزتك عبر واتساب
+                </button>
+            </a>
+            
+            <p style="font-size: 0.8em; margin-top: 15px; color: #aaa;">
+                ملاحظة: يجب التواصل معنا خلال 24 ساعة لتأكيد الجائزة.
+            </p>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script> 
+</body>
+</html>
