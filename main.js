@@ -103,7 +103,4 @@ function handleRewardTransition() {
     prizeWonElement.textContent = `🎉 ${winningPrize.name}`;
 
     whatsappLink.href = "https://t.me/mustafaalaghambcdream24";
-}{YOUR_WHATSAPP_NUMBER}?text=${encodedMessage}`;
-
-    whatsappLink.href = finalWhatsAppURL;
-}
+        }
