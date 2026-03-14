@@ -67,3 +67,11 @@ button {
     width: 95%; 
     cursor: pointer;
 }
+    background: linear-gradient(180deg, #b91d73, #57008a); 
+    color: white;
+    padding: 15px 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 95%; 
+    cursor: pointer;
+}
